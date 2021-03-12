@@ -1,0 +1,135 @@
+@font-face {
+  font-family: 'BebasNeue-Bold';
+  src: "../fonts/BebasNeue/BebasNeue-Bold.ttf"; }
+@font-face {
+  font-family: 'BebasNeue-Regular';
+  src: "../fonts/BebasNeue/BebasNeue-Regular.ttf"; }
+* {
+  margin: 0;
+  padding: 0; }
+
+@keyframes loader {
+  90% {
+    opacity: 0;
+    z-index: 111; }
+  100% {
+    opacity: 0;
+    z-index: -111; } }
+@keyframes resetTop {
+  to {
+    transform: translateY(0); } }
+@keyframes fadeIn {
+  to {
+    opacity: 1; } }
+body {
+  font-family: 'Playfair Display', serif;
+  background: #000000; }
+  body img {
+    max-width: 100%; }
+  body ul {
+    list-style: none; }
+    body ul a {
+      text-decoration: none;
+      display: inline-block; }
+
+.wrapper {
+  width: 100vw;
+  height: 100vh; }
+  .wrapper .container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 30px 20px;
+    margin: 0 auto; }
+  .wrapper .loader {
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 111;
+    animation: loader 1s ease-in-out 4s forwards; }
+    .wrapper .loader img {
+      margin: auto;
+      height: 280px; }
+  .wrapper header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 40px 7px 6px;
+    z-index: 11; }
+    .wrapper header .logo {
+      width: 90px;
+      height: 90px; }
+    .wrapper header nav ul {
+      display: grid;
+      grid-template-columns: repeat(4, auto); }
+      .wrapper header nav ul li a {
+        padding: 10px 20px;
+        color: #ffffff;
+        transition: transform .24s ease-in-out; }
+        .wrapper header nav ul li a:hover {
+          transform: rotate(-10deg) translate(-10px, 10px); }
+  .wrapper main {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden; }
+    .wrapper main > :first-child {
+      background-color: #ff5571;
+      animation: resetTop .25s ease-in-out 5s forwards;
+      transform: translateY(100%); }
+    .wrapper main > :last-child {
+      background-color: #000000; }
+    .wrapper main .central-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden; }
+      .wrapper main .central-img .img {
+        animation: resetTop .5s ease 5.1s forwards;
+        transform: translateY(-100%);
+        height: auto;
+        width: 55vw; }
+        .wrapper main .central-img .img img {
+          max-width: 100%; }
+      .wrapper main .central-img .name {
+        position: absolute;
+        top: 21%;
+        left: 48%;
+        z-index: 1111;
+        color: #ffffff;
+        width: auto;
+        font-size: 4vw;
+        text-align: center; }
+        .wrapper main .central-img .name p {
+          overflow: hidden; }
+          .wrapper main .central-img .name p span {
+            display: block;
+            transform: translateY(100%);
+            animation: resetTop .6s ease forwards;
+            animation-delay: 5.3s; }
+        .wrapper main .central-img .name > :last-child span {
+          animation-delay: 5.44s; }
+    .wrapper main .description {
+      color: #ffffff;
+      text-align: center;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeIn .5s ease-in-out forwards;
+      animation-delay: 6.2s;
+      position: absolute;
+      top: 84%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60vw; }
+
+/*# sourceMappingURL=index.css.map */
